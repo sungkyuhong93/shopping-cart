@@ -41,9 +41,12 @@ const CartDrawer = (props) => {
     return ReactDOM.createPortal(content, document.getElementById("drawer-hook"));
 }
 
-
 const mapStateToProps = state => {
-    return { cartItems: state.cartItems, isCartOpen: state.isCartOpen, cartTotal: state.cartTotal  }
+    return { 
+        cartItems: state.cartItems, 
+        isCartOpen: state.isCartOpen, 
+        cartTotal: state.cartTotal  
+    }
 }
 
 export default connect(mapStateToProps, { addToCart, clearCart, closeCart, getCartTotal })(CartDrawer);
